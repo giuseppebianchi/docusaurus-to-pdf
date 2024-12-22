@@ -1,3 +1,11 @@
+## Contribution
+### Changes in my Fork
+I created this fork to address an issue where some images were missing in the final PDF. This problem seems to occur with JSX-based pages, because their extracted HTML presents `<img>` tags with the `loading` attribute set to `lazy`, which prevents the images to be loaded and displayed during PDF rendering.
+
+My [Pull Request](https://github.com/robertjdominguez/docusaurus-to-pdf/pull/2) introduces an option (**--forceImages**) to disable lazy loading, removing `loading` attribute from `<img>` tags. This ensures that all images, even those outside the visible viewport, are fully loaded and included in the generated PDF.
+
+---
+
 # docusaurus-to-pdf
 
 `docusaurus-to-pdf` is a CLI tool that generates a PDF from a Docusaurus-based documentation website. The tool allows customization of the scraping process via a configuration file or CLI options.
